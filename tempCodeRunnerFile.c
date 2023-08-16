@@ -1,35 +1,27 @@
 #include <stdio.h>
+int main()
+{
+    int a = 0, b = 0, c = 0 ;
+    printf("Input[1] ") ; scanf( "%d", &a ) ;
+    printf("Input[2] ") ; scanf( "%d", &b ) ;
+    printf("Input[3] ") ; scanf( "%d", &c ) ;
+    
+    if( a > b && a > c ) {
+        printf( "%d ", a ) ;
+        if( b > c ) printf( "%d %d ", b,c ) ;
+        else printf( "%d %d ", c,b ) ;
+    }
 
-int main() {
-    int num1, num2, num3;
+    else if( b > a && b > c ) {
+        printf( "%d ", b ) ;
+        if( a > c ) printf( "%d %d ", a, c ) ;
+        else printf( "%d %d ", c,a ) ;
+    }
 
-    printf("Input[1] : ");
-    scanf("%d", &num1);
-
-    printf("Input[2] : ");
-    scanf("%d", &num2);
-
-    printf("Input[3] : ");
-    scanf("%d", &num3);
-
-    if (num1 >= num2 && num1 >= num3) {
-        if (num2 >= num3) {
-            printf("%d %d %d\n", num1, num2, num3);
-        } else {
-            printf("%d %d %d\n", num1, num3, num2);
-        }
-    } else if (num2 >= num1 && num2 >= num3) {
-        if (num1 >= num3) {
-            printf("%d %d %d\n", num2, num1, num3);
-        } else {
-            printf("%d %d %d\n", num2, num3, num1);
-        }
-    } else {
-        if (num1 >= num2) {
-            printf("%d %d %d\n", num3, num1, num2);
-        } else {
-            printf("%d %d %d\n", num3, num2, num1);
-        }
+    else if( c > b && c > a ) {
+        printf( "%d ", c ) ;
+        if( b > a ) printf( "%d %d ", b,a ) ;
+        else printf( "%d %d ", a,b ) ;
     }
 
     return 0;
